@@ -6,12 +6,12 @@ Built with Flask, HTML, CSS, and JavaScript, GreenCart is an online marketplace 
 
 #### Team Black Bulls
 
-| Image                                                                             | Name           | Description         |
-| :-------------------------------------------------------------------------------- | :------------- | :------------------ |
-| <img src="assets/NeilFaber.jpeg" alt="Neil Faber" width="90" align='center'>      | Neil Faber     | Front-End Lead      |
-| <img src="assets/JackSequeira.png" alt="Jack Sequeira" width="90" align='center'> | Jack Sequeira  | Back-End Lead       |
-| <img src="assets/Justin.jpeg" alt="Justin Dsouza" width="90" align='center'>      | Justin Dsouza  | Front-End Supporter |
-| <img src="assets/Mokshil" alt="Mokshil Satara" width="90" align='center'>         | Mokshil Satara | Back-End Supporter  |
+| Image                                                                                          | Name           | Description         |
+| :--------------------------------------------------------------------------------------------- | :------------- | :------------------ |
+| <p align='center'><img src="assets/NeilFaber.jpeg" alt="Neil Faber" width="90" align='center'> | Neil Faber     | Front-End Lead </p> |
+| <img src="assets/JackSequeira.png" alt="Jack Sequeira" width="90" align='center'>              | Jack Sequeira  | Back-End Lead       |
+| <img src="assets/Justin.jpeg" alt="Justin Dsouza" width="90" align='center'>                   | Justin Dsouza  | Front-End Supporter |
+| <img src="assets/Mokshil" alt="Mokshil Satara" width="90" align='center'>                      | Mokshil Satara | Back-End Supporter  |
 
 ## Project Abstract:
 
