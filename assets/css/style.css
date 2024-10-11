@@ -52,6 +52,7 @@
     --transition-timing: 0.2s ease;
   
   }
+
   
   /*-----------------------------------*\
     #RESET
@@ -109,7 +110,8 @@
     border: 3px solid var(--white);
     border-radius: 10px;
   }
-  
+
+
   body::-webkit-scrollbar-thumb:hover { background: hsl(230, 10%, 12%); }
   
   
@@ -146,7 +148,8 @@
     border-bottom: 1px solid var(--cultured);
     margin-bottom: 30px;
   }
-  
+
+
   
   
   
@@ -1690,22 +1693,6 @@
     margin: auto;
     margin-bottom: 15px;
   }
-  
-  .copyright {
-    color: var(--sonic-silver);
-    font-size: var(--fs-8);
-    font-weight: var(--weight-500);
-    text-transform: capitalize;
-    letter-spacing: 1.2px;
-  }
-  
-  .copyright a {
-    display: inline;
-    color: inherit;
-  }
-  
-  
-  
   
   
   /*-----------------------------------*\

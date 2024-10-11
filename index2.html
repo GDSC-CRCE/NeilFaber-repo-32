@@ -1,205 +1,359 @@
 <!DOCTYPE html>
+<html lang="en" class="hydrated">
 <head>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Anon - eCommerce Website</title>
-      
-        <!--
-          - favicon
-        -->
-        <link rel="shortcut icon" href="/assets/images/logo/favicon.ico" type="image/x-icon">
-      
-        <!--
-          - custom css link
-        -->
-        <link rel="stylesheet" href="/assets/css/style-prefix.css">
-      
-        <!--
-          - google font link
-        -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
-          rel="stylesheet">
-      
-      </head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexora - eCommerce Website</title>
+  
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/assets/images/logo/favicon.ico" type="image/x-icon">
+  
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/style-prefix.css">
+  
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <body>
-        <div class="overlay" data-overlay></div>
-      
-        <header>
-      
-          <div class="header-top">
-      
+    
+  
+    <header>
+        <div class="header-top">
             <div class="container">
-      
-              <ul class="header-social-container">
-      
-                <li>
-                  <a href="#" class="social-link">
+                <ul class="header-social-container">
+                    <li><a href="#" class="social-link"><ion-icon name="logo-facebook"></ion-icon></a></li>
+                    <li><a href="#" class="social-link"><ion-icon name="logo-twitter"></ion-icon></a></li>
+                    <li><a href="#" class="social-link"><ion-icon name="logo-instagram"></ion-icon></a></li>
+                    <li><a href="#" class="social-link"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+                </ul>
+                <div class="header-alert-news">
+                    <p><b>Free Shipping</b> This Week Order Over - $55</p>
+                </div>
+                <div class="header-top-actions">
+                    <select name="currency">
+                        <option value="inr">INR &#8377;</option>
+                        <option value="usd">USD &dollar;</option>
+                        <option value="eur">EUR &euro;</option>
+                    </select>
+                    <select name="language">
+                        <option value="en-US">English</option>
+                        <option value="es-ES">Espa&ntilde;ol</option>
+                        <option value="fr">Fran&ccedil;ais</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <a href="index.html" class="header-logo">
+                    <img src="./assets/images/logo/image (1).png" alt="Anon's logo" width="120" height="66">
+                </a>
+                <div class="header-search-container">
+                    <input type="search" name="search" class="search-field" placeholder="Enter your product name...">
+                    <button class="search-btn"><ion-icon name="search-outline"></ion-icon></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="product-featured">
+        <h2 class="title"></h2>
+            <div class="showcase">
+                <div class="showcase-banner">
+                    <img src="./assets/images/products/shampoo.jpg" alt="shampoo, conditioner & facewash packs" class="showcase-img">
+                </div>
+                <div class="showcase-content">
+                    <div class="showcase-rating">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star-outline"></ion-icon>
+                        <ion-icon name="star-outline"></ion-icon>
+                    </div>
+                    <h3 class="showcase-title">Shampoo, Conditioner & Facewash Packs</h3>
+                    <p class="showcase-desc">Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor dolor sit amet consectetur Lorem ipsum dolor</p>
+                    <div class="price-box">
+                        <p class="price">$150.00</p>
+                        <del>$200.00</del>
+                    </div>
+                    <button class="add-cart-btn">Add to Cart</button>
+                        <div class="showcase-status">
+                        <div class="wrapper">
+                            <p>Carbon FootPrint </p>
+                            <p>Score <b>40</b></p>
+                        </div>
+                        <div class="showcase-status-bar"></div>
+                        <div class="showcase-status">
+                            <div class="wrapper">
+                                <p>Packaging </p>
+                                <p>Score <b>30</b></p>
+                            </div>
+                            <div class="showcase-status-bar"></div>
+                            <div class="showcase-status">
+                                <div class="wrapper">
+                                    <p>Environmental Impace </p>
+                                    <p>Score <b>60</b></p>
+                                </div>
+                                <div class="showcase-status-bar"></div>
+                                <div class="showcase-status">
+                                    <div class="wrapper">
+                                        <p>Total </p>
+                                        <p>Score <b>40</b></p>
+                                    </div>
+                                    <div class="showcase-status-bar"></div>
+                    </div>
+                    <div class="countdown-box">
+                        <p class="countdown-desc">Hurry Up! Offer ends in:</p>
+                        <div class="countdown">
+                            <div class="countdown-content">
+                                <p class="display-number">360</p>
+                                <p class="display-text">Days</p>
+                            </div>
+                            <div class="countdown-content">
+                                <p class="display-number">24</p>
+                                <p class="display-text">Hours</p>
+                            </div>
+                            <div class="countdown-content">
+                                <p class="display-number">59</p>
+                                <p class="display-text">Min</p>
+                            </div>
+                            <div class="countdown-content">
+                                <p class="display-number">00</p>
+                                <p class="display-text">Sec</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div></div></div></div>
+
+    <!-- ABOUT THE PRODUCT Section -->
+    <div class="about-product">
+        <h2>About the Product</h2>
+        <p>
+            Our shampoo, conditioner, and facewash packs are designed to provide a holistic approach to personal care. 
+            Made with natural ingredients, they cleanse, nourish, and rejuvenate your hair and skin. 
+            Experience the refreshing scent and luxurious feel as you indulge in a spa-like experience at home.
+        </p>
+        <p>
+            Suitable for all hair and skin types, our products are free from harmful chemicals and are 
+            cruelty-free. Enjoy vibrant, healthy hair and glowing skin with our specially formulated packs.
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor neque dicta eveniet ullam aspernatur doloremque odit veritatis nesciunt cum nulla hic facere ipsam sunt repellat eligendi facilis accusantium quibusdam, quos velit unde totam dignissimos eos. Nulla harum omnis non, laborum temporibus, libero repudiandae deleniti consectetur aspernatur consequuntur, cum numquam voluptates? In nostrum aspernatur praesentium id at quia sequi, unde animi ipsum architecto commodi laudantium sunt. Provident, aperiam vero atque, velit nisi vitae consequuntur ipsa ea quae explicabo deserunt debitis doloremque dignissimos natus facilis et repellat a expedita. Nisi, obcaecati. Labore atque quam consequatur architecto dolorum, natus iure perspiciatis eos autem?</p>
+    </div>
+
+    <div class="footer-nav">
+
+        <div class="container">
+  
+          <ul class="footer-nav-list">
+  
+            <li class="footer-nav-item">
+              <h2 class="nav-title">Popular Categories</h2>
+            </li>
+  
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Fashion</a>
+            </li>
+  
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Electronic</a>
+            </li>
+  
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Cosmetic</a>
+            </li>
+  
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Health</a>
+            </li>
+  
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Watches</a>
+            </li>
+  
+          </ul>
+  
+          <ul class="footer-nav-list">
+          
+            <li class="footer-nav-item">
+              <h2 class="nav-title">Products</h2>
+            </li>
+          
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Prices drop</a>
+            </li>
+          
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">New products</a>
+            </li>
+          
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Best sales</a>
+            </li>
+          
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Contact us</a>
+            </li>
+          
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Sitemap</a>
+            </li>
+          
+          </ul>
+  
+          <ul class="footer-nav-list">
+          
+            <li class="footer-nav-item">
+              <h2 class="nav-title">Our Company</h2>
+            </li>
+          
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Delivery</a>
+            </li>
+          
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Legal Notice</a>
+            </li>
+          
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Terms and conditions</a>
+            </li>
+          
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">About us</a>
+            </li>
+          
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Secure payment</a>
+            </li>
+          
+          </ul>
+  
+          <ul class="footer-nav-list">
+          
+            <li class="footer-nav-item">
+              <h2 class="nav-title">Services</h2>
+            </li>
+          
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Prices drop</a>
+            </li>
+          
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">New products</a>
+            </li>
+          
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Best sales</a>
+            </li>
+          
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Contact us</a>
+            </li>
+          
+            <li class="footer-nav-item">
+              <a href="#" class="footer-nav-link">Sitemap</a>
+            </li>
+          
+          </ul>
+  
+          <ul class="footer-nav-list">
+  
+            <li class="footer-nav-item">
+              <h2 class="nav-title">Contact</h2>
+            </li>
+  
+            <li class="footer-nav-item flex">
+              <div class="icon-box">
+                <ion-icon name="location-outline"></ion-icon>
+              </div>
+  
+              <address class="content">
+                419 State 414 Rte
+                Beaver Dams, New York(NY), 14812, USA
+              </address>
+            </li>
+  
+            <li class="footer-nav-item flex">
+              <div class="icon-box">
+                <ion-icon name="call-outline"></ion-icon>
+              </div>
+  
+              <a href="tel:+607936-8058" class="footer-nav-link">(607) 936-8058</a>
+            </li>
+  
+            <li class="footer-nav-item flex">
+              <div class="icon-box">
+                <ion-icon name="mail-outline"></ion-icon>
+              </div>
+  
+              <a href="mailto:example@gmail.com" class="footer-nav-link">example@gmail.com</a>
+            </li>
+  
+          </ul>
+  
+          <ul class="footer-nav-list">
+  
+            <li class="footer-nav-item">
+              <h2 class="nav-title">Follow Us</h2>
+            </li>
+  
+            <li>
+              <ul class="social-link">
+  
+                <li class="footer-nav-item">
+                  <a href="#" class="footer-nav-link">
                     <ion-icon name="logo-facebook"></ion-icon>
                   </a>
                 </li>
-      
-                <li>
-                  <a href="#" class="social-link">
+  
+                <li class="footer-nav-item">
+                  <a href="#" class="footer-nav-link">
                     <ion-icon name="logo-twitter"></ion-icon>
                   </a>
                 </li>
-      
-                <li>
-                  <a href="#" class="social-link">
-                    <ion-icon name="logo-instagram"></ion-icon>
-                  </a>
-                </li>
-      
-                <li>
-                  <a href="#" class="social-link">
+  
+                <li class="footer-nav-item">
+                  <a href="#" class="footer-nav-link">
                     <ion-icon name="logo-linkedin"></ion-icon>
                   </a>
                 </li>
-      
+  
+                <li class="footer-nav-item">
+                  <a href="#" class="footer-nav-link">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                  </a>
+                </li>
+  
               </ul>
-      
-              <div class="header-alert-news">
-                <p>
-                  <b>Free Shipping</b>
-                  This Week Order Over - $55
-                </p>
-              </div>
-      
-              <div class="header-top-actions">
-      
-                <select name="currency">
-      
-                  <option value="usd">USD &dollar;</option>
-                  <option value="eur">EUR &euro;</option>
-      
-                </select>
-      
-                <select name="language">
-      
-                  <option value="en-US">English</option>
-                  <option value="es-ES">Espa&ntilde;ol</option>
-                  <option value="fr">Fran&ccedil;ais</option>
-      
-                </select>
-      
-              </div>
-      
-            </div>
-      
-          </div>
-      
-    <div class="product-featured">
-
-        <div class="showcase-wrapper has-scrollbar">
-
-          <div class="showcase-container">
-
-            <div class="showcase">
-              
-              <div class="showcase-banner">
-                <img src="./assets/images/products/shampoo.jpg" alt="shampoo, conditioner & facewash packs" class="showcase-img">
-              </div>
-
-              <div class="showcase-content">
-                
-                <div class="showcase-rating">
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star-outline"></ion-icon>
-                  <ion-icon name="star-outline"></ion-icon>
-                </div>
-
-                <a href="#">
-                  <h3 class="showcase-title">shampoo, conditioner & facewash packs</h3>
-                </a>
-
-                <p class="showcase-desc">
-                  Lorem ipsum dolor sit amet consectetur Lorem ipsum
-                  dolor dolor sit amet consectetur Lorem ipsum dolor
-                </p>
-
-                <div class="price-box">
-                  <p class="price">$150.00</p>
-
-                  <del>$200.00</del>
-                </div>
-
-                <button class="add-cart-btn">add to cart</button>
-
-                <div class="showcase-status">
-                  <div class="wrapper">
-                    <p>
-                      already sold: <b>20</b>
-                    </p>
-
-                    <p>
-                      available: <b>40</b>
-                    </p>
-                  </div>
-
-                  <div class="showcase-status-bar"></div>
-                </div>
-
-                <div class="countdown-box">
-
-                  <p class="countdown-desc">
-                    Hurry Up! Offer ends in:
-                  </p>
-
-                  <div class="countdown">
-
-                    <div class="countdown-content">
-
-                      <p class="display-number">360</p>
-
-                      <p class="display-text">Days</p>
-
-                    </div>
-
-                    <div class="countdown-content">
-                      <p class="display-number">24</p>
-                      <p class="display-text">Hours</p>
-                    </div>
-
-                    <div class="countdown-content">
-                      <p class="display-number">59</p>
-                      <p class="display-text">Min</p>
-                    </div>
-
-                    <div class="countdown-content">
-                      <p class="display-number">00</p>
-                      <p class="display-text">Sec</p>
-                    </div>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-      
-
+            </li>
+  
+          </ul>
+  
         </div>
-
+  
       </div>
+  
+      <div class="footer-bottom">
+  
+        <div class="container">
+  
+          <img src="./assets/images/payment.png" alt="payment method" class="payment-img">
+
+  
+        </div>
+  
+      </div>
+  
+    </footer>
+  
+
+    <script src="./assets/js/script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
-<script src="./assets/js/script.js"></script>
-
-<!--
-  - ionicon link
--->
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
 </html>
