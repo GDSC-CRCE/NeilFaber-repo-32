@@ -4,6 +4,9 @@ __pycache__/
 # Environments
 env
 
+# Database 
+database.db
+
 # Secret stuff
 keys.py
 makefile
