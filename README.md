@@ -26,8 +26,11 @@ GreenCart is a web-based platform designed to promote sustainable consumption an
 
 **Technology Stack:**
 
-<p align = 'center'> 
-Flask, Flask-CORS, SQLite3, HTML, CSS, JavaScript and Git
+<p align='center'>
+
+![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)
+![Flask-CORS](https://img.shields.io/badge/flask_cors-%23000.svg?style=for-the-badge&logo=flask&logoColor=yellow) ![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS](https://img.shields.io/badge/css-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+
 </p>
 
 - **Backend:** Flask (Python web framework), Flask-CORS
