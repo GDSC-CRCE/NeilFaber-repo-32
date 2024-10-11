@@ -1,21 +1,25 @@
 # Nexora Cart: A Sustainable E-commerce Platform
 
-Built with Flask, HTML, CSS, and JavaScript, GreenCart is an online marketplace dedicated to eco-friendly products. It empowers consumers to make informed choices by providing detailed information about the environmental impact of each product. Users can track their carbon footprint, choose sustainable shipping options, and even offset their environmental impact.
+Built with Flask, HTML, CSS, and JavaScript, Nexora Cart is an online marketplace dedicated to eco-friendly products. It empowers consumers to make informed choices by providing detailed information about the environmental impact of each product. Users can track their carbon footprint, choose sustainable shipping options, and even offset their environmental impact.
 
 ## Authors
 
 #### Team Black Bulls
 
-| Image                                                                                          | Name           | Description         |
-| :--------------------------------------------------------------------------------------------- | :------------- | :------------------ |
-| <p align='center'><img src="assets/NeilFaber.jpeg" alt="Neil Faber" width="90" align='center'> | Neil Faber     | Front-End Lead </p> |
-| <img src="assets/JackSequeira.png" alt="Jack Sequeira" width="90" align='center'>              | Jack Sequeira  | Back-End Lead       |
-| <img src="assets/Justin.jpeg" alt="Justin Dsouza" width="90" align='center'>                   | Justin Dsouza  | Front-End Supporter |
-| <img src="assets/Mokshil" alt="Mokshil Satara" width="90" align='center'>                      | Mokshil Satara | Back-End Supporter  |
+<p align='center'>
+
+| Image                                                              | Name           | Description         |
+| :----------------------------------------------------------------- | :------------- | :------------------ |
+| <img src="assets/NeilFaber.jpeg" alt="Neil Faber" width="90">      | Neil Faber     | Front-End Lead </p> |
+| <img src="assets/JackSequeira.png" alt="Jack Sequeira" width="90"> | Jack Sequeira  | Back-End Lead       |
+| <img src="assets/Justin.jpeg" alt="Justin Dsouza" width="90">      | Justin Dsouza  | Front-End Supporter |
+| <img src="assets/Mokshil" alt="Mokshil Satara" width="90">         | Mokshil Satara | Back-End Supporter  |
+
+</p>
 
 ## Project Abstract:
 
-GreenCart is a web-based platform designed to promote sustainable consumption and reduce the environmental impact of online shopping. It empowers consumers to make informed choices by providing detailed information about the sustainability of products, offering eco-friendly shipping options, and facilitating carbon offsetting.
+Nexora Cart is a web-based platform designed to promote sustainable consumption and reduce the environmental impact of online shopping. It empowers consumers to make informed choices by providing detailed information about the sustainability of products, offering eco-friendly shipping options, and facilitating carbon offsetting.
 
 **Key Features:**
 
