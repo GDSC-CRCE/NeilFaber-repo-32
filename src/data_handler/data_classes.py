@@ -6,7 +6,7 @@ database = "database.db"
 
 class ProductsHandler:
     def __init__(self):
-        self.conn = sqlite3.connect(database)
+        self.conn = sqlite3.connect(database, check_same_thread=False)
         self.cursor = self.conn.cursor()
         self.name = "products"
 
@@ -25,25 +25,33 @@ class ProductsHandler:
         self.conn.commit()
         print("Products table created successfully.")
 
-    def retrieve_data(self, category=None, name=None, id=None, co2print=None, envimp=None):
+    def retrieve_data(self, category=None, name=None, id=None, phone=None, co2print=None, envimp=None, ):
         sql = "SELECT * FROM products"
         where_clause = []
+        values = []
         if category:
             where_clause.append("category = ?")
+            values.append(category)
         if name:
             where_clause.append("name = ?")
+            values.append(name)
         if id:
             where_clause.append("id = ?")
+            values.append(id)
+        if id:
+            where_clause.append("phone = ?")
+            values.append(phone)
         if co2print:
             where_clause.append("co2print = ?")
+            values.append(co2print)
         if envimp:
             where_clause.append("envimp = ?")
+            values.append(envimp)
 
         if where_clause:
             sql += " WHERE " + " AND ".join(where_clause)
-
-        values = (category, name, id, co2print, envimp)
-        self.cursor.execute(sql, values)
+        print(tuple(values))
+        self.cursor.execute(sql, tuple(values))
         rows = self.cursor.fetchall()
         return rows
 
@@ -107,7 +115,7 @@ class ProductsHandler:
 
 class UsersHandler:
     def __init__(self):
-        self.conn = sqlite3.connect(database)
+        self.conn = sqlite3.connect(database, check_same_thread=False)
         self.cursor = self.conn.cursor()
 
     # ... (other functions)
@@ -143,6 +151,36 @@ class UsersHandler:
         self.cursor.execute(sql, values)
         self.conn.commit()
         print("User created successfully.")
+
+    def retrieve_user(self, first_name=None, last_name=None, password=None, email=None, phone=None):
+        sql = "SELECT * FROM users"
+        where_clause = []
+        values = []
+        if first_name:
+            where_clause.append("first_name = ?")
+            values.append(first_name)
+        if last_name:
+            where_clause.append("last_name = ?")
+            values.append(last_name)
+        if password:
+            where_clause.append("password = ?")
+            values.append(password)
+        if email:
+            where_clause.append("email = ?")
+            values.append(email)
+        if phone:
+            where_clause.append("phone = ?")
+            values.append(phone)
+
+        if where_clause:
+            sql += " WHERE " + " AND ".join(where_clause)
+
+        self.cursor.execute(sql, values)
+        user_data = self.cursor.fetchone()
+        if user_data:
+            return user_data
+        else:
+            return None
 
     def update_user(self, user_id, first_name=None, last_name=None, bio=None, phone=None, email=None, image=None, password=None, shipping_address=None, dob=None):
         sql = "UPDATE users SET"
