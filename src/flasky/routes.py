@@ -39,16 +39,15 @@ def sign_up():
         return render_template('sign-up.html')
 
 
-@app.route('/login', methods=['GET', 'PUT'])
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'GET':
         return render_template('login.html')
     else:
-        email = request.args.get('email')
-        password = request.args.get('password')
+        email = request.form.get('email')
+        password = request.form.get('password')
         if userHandler.retrieve_user(password=password, email=email):
-            session.get['email'] = email
-            return redirect(url_for('index'))
+            session['email'] = email
         return redirect(url_for('index'))
 
 
