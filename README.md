@@ -17,6 +17,21 @@ Built with Flask, HTML, CSS, and JavaScript, Nexora Cart is an online marketplac
 
 </div>
 
+## Project Visuals:
+
+<div align='center'>
+    <a href='https://intial.pythonanywhere.com'><img src='assets/Deployment Link.png' alt="https://intial.pythonanywhere.com"></a>
+ 
+ ---
+ ---
+
+![Home Page](assets/SS%201.png)
+
+![Mobile Home Page](assets/SS%203.png)
+![Search Results](assets/SS%205.png)
+
+</div>
+
 ## Project Abstract:
 
 Nexora Cart is a web-based platform designed to promote sustainable consumption and reduce the environmental impact of online shopping. It empowers consumers to make informed choices by providing detailed information about the sustainability of products, offering eco-friendly shipping options, and facilitating carbon offsetting.
@@ -46,3 +61,10 @@ Nexora Cart is a web-based platform designed to promote sustainable consumption 
 - **Product Filtering and Sorting:** Server-Side Processing. Flask APIs can handle the filtering and sorting logic on the server, ensuring that the data is processed efficiently and securely.
 - **Community Features:** JavaScript can power features like commenting, discussion forums, and real-time interactions within the community.
 - **Third-Party Integrations:**
+
+<div align='center'>
+
+![Home Page Tablet](assets/SS%202.png)
+![Mobile Home Page](assets/SS%204.png)
+
+</div>
