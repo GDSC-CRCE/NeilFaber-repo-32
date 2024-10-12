@@ -2,6 +2,12 @@
 
 Built with Flask, HTML, CSS, and JavaScript, Nexora Cart is an online marketplace dedicated to eco-friendly products. It empowers consumers to make informed choices by providing detailed information about the environmental impact of each product. Users can track their carbon footprint, choose sustainable shipping options, and even offset their environmental impact.
 
+<div align='center'>
+
+## Do follow Me: [Gabbar-v7](https://github.com/Gabbar-v7) And Star My Repo: [CRUD](https://github.com/Gabbar-v7/CRUD)
+
+</div>
+
 ## Authors
 
 #### Team Black Bulls
