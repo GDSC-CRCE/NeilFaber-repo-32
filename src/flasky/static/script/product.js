@@ -2,10 +2,10 @@ var productName = document.getElementById("product-name");
 var productDescription = document.getElementById("product-description");
 var productImage = document.getElementById("product-image");
 var productPrice = document.getElementById("product-price");
-var productId;
+var productId = JSON.parse(localStorage.getItem("product"));
 
 function setVariable() {
-  fetch("/product-details")
+  fetch("/product-details/" + productId)
     .then((response) => response.json())
     .then((data) => {
       // Process the fetched data
