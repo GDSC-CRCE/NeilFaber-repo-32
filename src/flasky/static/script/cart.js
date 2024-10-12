@@ -64,13 +64,13 @@ document.addEventListener("DOMContentLoaded", async function () {
   ).toFixed(2);
 
   // Display total summary
-  totalSummaryContainer.innerHTML = `
-      <span>Total Price: $${totalPrice.toFixed(2)}</span>
-      <span>Total Carbon Footprint: ${totalCo2.toFixed(2)}</span>
-      <span>Total Packaging: ${totalPackaging.toFixed(2)}</span>
-      <span>Total Environmental Impact: ${totalEnvImpact.toFixed(2)}</span>
-      <span>Average Impact: ${avgTotalImpact}</span>
-  `;
+  updateCartSummary(
+    totalPrice,
+    totalCo2,
+    totalPackaging,
+    totalEnvImpact,
+    avgTotalImpact
+  );
 
   // Event listener for Remove buttons
   cartItemsContainer.addEventListener("click", function (e) {
@@ -78,23 +78,94 @@ document.addEventListener("DOMContentLoaded", async function () {
       let cartItemElement = e.target.closest(".cart-item");
       let productId = parseInt(cartItemElement.getAttribute("data-product-id")); // Convert to number
 
+      console.log("Product ID to remove:", productId); // Debug log
+
       // Find the index of the first occurrence of the product ID
       const indexToRemove = cart.findIndex((id) => parseInt(id) === productId);
       if (indexToRemove !== -1) {
+        console.log("Removing product at index:", indexToRemove); // Debug log
         cart.splice(indexToRemove, 1); // Remove the first occurrence
         localStorage.setItem("cart", JSON.stringify(cart));
 
         // Remove item from the page
         cartItemElement.remove();
 
-        window.location.href = "cart";
+        // Recalculate totals after removal
+        recalculateTotals();
+      } else {
+        console.error("Product not found in cart");
       }
     }
   });
+
+  function recalculateTotals() {
+    totalPrice = 0;
+    totalCo2 = 0;
+    totalPackaging = 0;
+    totalEnvImpact = 0;
+
+    cartItemsContainer.querySelectorAll(".cart-item").forEach((item) => {
+      const itemPrice = parseFloat(
+        item
+          .querySelector(".item-info span:nth-child(1)")
+          .textContent.replace("Price: $", "")
+      );
+      const itemCo2 = parseFloat(
+        item
+          .querySelector(".item-info span:nth-child(2)")
+          .textContent.replace("Carbon Footprint: ", "")
+      );
+      const itemPackaging = parseFloat(
+        item
+          .querySelector(".item-info span:nth-child(3)")
+          .textContent.replace("Packaging: ", "")
+      );
+      const itemEnvImpact = parseFloat(
+        item
+          .querySelector(".item-info span:nth-child(4)")
+          .textContent.replace("Environmental Impact: ", "")
+      );
+
+      totalPrice += itemPrice;
+      totalCo2 += itemCo2;
+      totalPackaging += itemPackaging;
+      totalEnvImpact += itemEnvImpact;
+    });
+
+    let avgTotalImpact = (
+      (totalCo2 + totalPackaging + totalEnvImpact) /
+      3
+    ).toFixed(2);
+    updateCartSummary(
+      totalPrice,
+      totalCo2,
+      totalPackaging,
+      totalEnvImpact,
+      avgTotalImpact
+    );
+  }
+
+  function updateCartSummary(price, co2, packaging, envImpact, avgImpact) {
+    // Ensure that price and other numbers are valid
+    price = parseFloat(price) || 0; // Use 0 if price is invalid
+    co2 = parseFloat(co2) || 0;
+    packaging = parseFloat(packaging) || 0;
+    envImpact = parseFloat(envImpact) || 0;
+    avgImpact = parseFloat(avgImpact) || 0;
+
+    totalSummaryContainer.innerHTML = `
+      <span>Total Price: $${price.toFixed(2)}</span>
+      <span>Total Carbon Footprint: ${co2.toFixed(2)}</span>
+      <span>Total Packaging: ${packaging.toFixed(2)}</span>
+      <span>Total Environmental Impact: ${envImpact.toFixed(2)}</span>
+      <span>Average Impact: ${avgImpact}</span>
+    `;
+  }
 });
 
 // Purchase button alert
 document.querySelector(".purchase-btn").addEventListener("click", function () {
+  localStorage.removeItem("cart");
   alert("Thank you for your purchase!");
   window.location.href = "/";
 });
