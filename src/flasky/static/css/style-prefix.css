@@ -1761,7 +1761,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 .product-grid .btn-action {
   background: var(--white);
-  color: var(--sonic-silver);
+  color: white;
   margin-bottom: 5px;
   border: 1px solid var(--cultured);
   padding: 5px;
