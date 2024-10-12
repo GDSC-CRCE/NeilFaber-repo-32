@@ -1,12 +1,8 @@
 from flask import Flask, redirect, render_template, request, session, url_for, jsonify
 from flask_cors import cross_origin, CORS
 
-<<<<<<< HEAD
-app = Flask(app)
-=======
 from keys import FLASK_SESSION_KEY
 from src.data_handler.data_classes import ProductsHandler, UsersHandler
-from src.unsplash.images import get_image_as_bytes, get_random_unsplash_image
 
 app = Flask(__name__)
 app.secret_key = FLASK_SESSION_KEY
@@ -35,8 +31,7 @@ def sign_up():
         password = request.form.get('password')
 
         if not userHandler.retrieve_user(phone=phone) or not userHandler.retrieve_user(email=email):
-            userHandler.create_user(first_name=firstname, last_name=lastname, bio='', phone=phone, email=email, image=get_image_as_bytes(
-                get_random_unsplash_image()), password=password, shipping_address='', dob=dob)
+            userHandler.create_user(first_name=firstname, last_name=lastname, bio='', phone=phone, email=email, image=None, password=password, shipping_address='', dob=dob)
             session['email'] = email
             return redirect(url_for('index'))
         return render_template('index.html')
@@ -80,10 +75,26 @@ def cart():
     return render_template('cart.html')
 
 
-def create_rough_Work():
+def insertData():
     if not productsHandler.retrieve_data(category='Hygiene'):
         userHandler.create_user(
             'Jack', 'Sequeira', '', '9922992299', 'jackas@gmail.com', None, 'asd', '', '')
         productsHandler.create_data(
             'Hygiene', 'Bamboo Toothbrush Family Pack (4 pc)| Biodegradable And Compostable Handle | Eco-friendly', 'Bamboo Toothbrush Family Pack: Make a sustainable choice for your entire family with our bamboo toothbrush family pack. Each toothbrush features a handle crafted from renewable bamboo, known for its natural antibacterial properties and biodegradability. The soft bristles ensure effective cleaning while being gentle on gums, suitable for both adults and kids. Promote oral hygiene while reducing environmental impact with our eco-friendly family pack, designed for a cleaner planet and healthier smiles.', 'Use of recycled materials: Recycled materials typically require less energy to produce than virgin materials, which can help to reduce greenhouse gas emissions.\n Reduced energy consumption during manufacturing: Eco-friendly manufacturers may use energy-efficient processes or renewable energy sources to power their facilities.\n Durable and long-lasting products: Products that are designed to last for a long time will need to be replaced less frequently, which can help to reduce the overall environmental impact.\n Easy to recycle or compost: Products that can be easily recycled or composted at the end of their useful life can help to divert waste from landfills.', 'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSsoPu5u1ifSmuFUyjnoCtLNTFBJUEFFZikIcRmqXJUkNKlcnl61bpUFJQsDx1qZMtKrTfKTj4CNThs4JFupCb3uoxGfzY7wA', 400, .2, .3)
->>>>>>> front
+        import pandas as pd
+
+        def xlsx_to_list(file_path):
+            # Read the Excel file
+            df = pd.read_excel(file_path)
+            
+            # Convert the DataFrame to a list of lists
+            list_of_lists = df.values.tolist()
+            
+            return list_of_lists
+
+        # Usage
+        file_path = 'Products_List.xlsx'  # Update with your file path
+        data = xlsx_to_list(file_path)
+        for i in data:
+            productsHandler.create_data(i[0], i[1], i[2], i[3], i[4], i[5], i[6],i[7])
+

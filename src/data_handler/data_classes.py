@@ -48,7 +48,6 @@ class ProductsHandler:
 
         if where_clause:
             sql += " WHERE " + " AND ".join(where_clause)
-        print(tuple(values))
         self.cursor.execute(sql, tuple(values))
         rows = self.cursor.fetchall()
         return rows
