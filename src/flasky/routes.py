@@ -1,11 +1,13 @@
-from flask import Flask, redirect, render_template, request, session, url_for
-from flask_cors import cross_origin
-from src.unsplash.images import get_image_as_bytes, get_random_unsplash_image
+from flask import Flask, redirect, render_template, request, session, url_for, jsonify
+from flask_cors import cross_origin, CORS
+
 from keys import FLASK_SESSION_KEY
 from src.data_handler.data_classes import ProductsHandler, UsersHandler
+from src.unsplash.images import get_image_as_bytes, get_random_unsplash_image
 
 app = Flask(__name__)
 app.secret_key = FLASK_SESSION_KEY
+CORS(app)
 
 userHandler = UsersHandler()
 productsHandler = ProductsHandler()
@@ -55,3 +57,25 @@ def login():
 def log_out():
     session['email'] = None
     return redirect(url_for('login'))
+
+
+@app.route('/products')
+def products():
+    return render_template('product.html')
+
+
+@app.route('/product-details')
+def product_details():
+    item = productsHandler.retrieve_data(category='Hygiene')[0]
+    item = {'name': item[2], 'description': item[3],
+            'imageUrl': item[5], 'price': item[6], 'co2print': item[7], 'envimp': item[8]}
+    print(item)
+    return jsonify(item)
+
+
+def create_rough_Work():
+    if not productsHandler.retrieve_data(category='Hygiene'):
+        userHandler.create_user(
+            'Jack', 'Sequeira', '', '9922992299', 'jackas@gmail.com', None, 'asd', '', '')
+        productsHandler.create_data(
+            'Hygiene', 'Bamboo Toothbrush Family Pack (4 pc)| Biodegradable And Compostable Handle | Eco-friendly', 'Bamboo Toothbrush Family Pack: Make a sustainable choice for your entire family with our bamboo toothbrush family pack. Each toothbrush features a handle crafted from renewable bamboo, known for its natural antibacterial properties and biodegradability. The soft bristles ensure effective cleaning while being gentle on gums, suitable for both adults and kids. Promote oral hygiene while reducing environmental impact with our eco-friendly family pack, designed for a cleaner planet and healthier smiles.', 'Use of recycled materials: Recycled materials typically require less energy to produce than virgin materials, which can help to reduce greenhouse gas emissions.\n Reduced energy consumption during manufacturing: Eco-friendly manufacturers may use energy-efficient processes or renewable energy sources to power their facilities.\n Durable and long-lasting products: Products that are designed to last for a long time will need to be replaced less frequently, which can help to reduce the overall environmental impact.\n Easy to recycle or compost: Products that can be easily recycled or composted at the end of their useful life can help to divert waste from landfills.', 'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSsoPu5u1ifSmuFUyjnoCtLNTFBJUEFFZikIcRmqXJUkNKlcnl61bpUFJQsDx1qZMtKrTfKTj4CNThs4JFupCb3uoxGfzY7wA', 400, .2, .3)
