@@ -15,10 +15,11 @@ class ProductsHandler:
         product_id INTEGER PRIMARY KEY AUTOINCREMENT,
         category TEXT,
         name TEXT,
-        descrption TEXT,
+        description TEXT,
         life_cycle TEXT,
-        image_path TEXT,
-        co2print INTEGER,
+        imageUrl TEXT,
+        price INT,
+        co2print REAL,
         envimp REAL
         )"""
         self.cursor.execute(sql)
@@ -55,10 +56,10 @@ class ProductsHandler:
         rows = self.cursor.fetchall()
         return rows
 
-    def create_data(self, category, name, description, life_cycle, image_path, co2print, envimp):
-        sql = "INSERT INTO products (category, name, description, life_cycle, image_path, co2print, envimp) VALUES (?, ?, ?, ?)"
+    def create_data(self, category, name, description, life_cycle, imageUrl, price, co2print, envimp):
+        sql = "INSERT INTO products (category, name, description, life_cycle, imageUrl,price, co2print, envimp) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
         values = (category, name, description, life_cycle,
-                  image_path, co2print, envimp)
+                  imageUrl, price, co2print, envimp)
         self.cursor.execute(sql, values)
         self.conn.commit()
         print("Data inserted successfully.")
@@ -85,7 +86,7 @@ class ProductsHandler:
         self.conn.commit()
         print("Data deleted successfully.")
 
-    def update_data(self, product_id, category=None, name=None, description=None, life_cycle=None, co2print=None, envimp=None):
+    def update_data(self, product_id, category=None, name=None, description=None, life_cycle=None, imageUrl=None, price=None, co2print=None, envimp=None):
         sql = "UPDATE products SET"
         update_set = []
         if category:
@@ -96,6 +97,10 @@ class ProductsHandler:
             update_set.append("description = ?")
         if life_cycle:
             update_set.append("life_cycle = ?")
+        if imageUrl:
+            update_set.append("imageUrl = ?")
+        if price:
+            update_set.append("price = ?")
         if co2print:
             update_set.append("co2print = ?")
         if envimp:
@@ -104,7 +109,8 @@ class ProductsHandler:
         if update_set:
             sql += " " + ", ".join(update_set) + " WHERE id = ?"
 
-        values = (category, name, description, co2print, envimp, product_id)
+        values = (category, name, description, co2print,
+                  imageUrl, envimp, product_id)
         self.cursor.execute(sql, values)
         self.conn.commit()
         print("Data updated successfully.")
