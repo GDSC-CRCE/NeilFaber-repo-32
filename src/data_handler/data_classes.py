@@ -52,6 +52,32 @@ class ProductsHandler:
         rows = self.cursor.fetchall()
         return rows
 
+    def retrieve_optional_data(self, category=None, name=None, id=None, co2print=None, envimp=None, ):
+        sql = "SELECT * FROM products"
+        where_clause = []
+        values = []
+        if category:
+            where_clause.append("category = ?")
+            values.append(category)
+        if name:
+            where_clause.append("name = ?")
+            values.append(name)
+        if id:
+            where_clause.append("product_id = ?")
+            values.append(id)
+        if co2print:
+            where_clause.append("co2print = ?")
+            values.append(co2print)
+        if envimp:
+            where_clause.append("envimp = ?")
+            values.append(envimp)
+
+        if where_clause:
+            sql += " WHERE " + " OR ".join(where_clause)
+        self.cursor.execute(sql, tuple(values))
+        rows = self.cursor.fetchall()
+        return rows
+
     def create_data(self, category, name, description, life_cycle, imageUrl, price, co2print, envimp):
         sql = "INSERT INTO products (category, name, description, life_cycle, imageUrl,price, co2print, envimp) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
         values = (category, name, description, life_cycle,

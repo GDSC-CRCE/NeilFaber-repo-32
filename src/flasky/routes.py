@@ -76,6 +76,26 @@ def cart():
     return render_template('cart.html')
 
 
+@app.route('/search')
+def search_page():
+    return render_template('search.html')
+
+
+@app.route('/search/<string:item>')
+def search(item):
+    data = []
+    value = productsHandler.retrieve_optional_data(
+        category=item, name=item, co2print=item, envimp=item)
+    if (value):
+        for item in value:
+            item = {'name': item[2], 'description': item[3], 'life_cycle': item[4],
+                    'imageUrl': item[5], 'price': item[6], 'co2print': item[7], 'envimp': item[8], 'productId': item[0]}
+            data.append(item)
+        return jsonify(data)
+    else:
+        return jsonify({'error': 'Error fetching data'}), 400
+
+
 def insertData():
     if not productsHandler.retrieve_data(category='Hygiene'):
         userHandler.create_user(
