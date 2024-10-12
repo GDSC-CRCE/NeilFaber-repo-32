@@ -20,12 +20,11 @@ Built with Flask, HTML, CSS, and JavaScript, Nexora Cart is an online marketplac
 ## Project Visuals:
 
 <div align='center'>
-    <a href='https://intial.pythonanywhere.com'><img src='assets/Deployment Link.png' alt="https://intial.pythonanywhere.com"></a>
+    
+<a href="https://intial.pythonanywhere.com"><img src='assets/Deployment Link.png' alt='https://intial.pythonanywhere.com' width=320px></a>
  
  ---
  ---
-
-![Home Page](assets/SS%201.png)
 
 ![Mobile Home Page](assets/SS%203.png)
 ![Search Results](assets/SS%205.png)
