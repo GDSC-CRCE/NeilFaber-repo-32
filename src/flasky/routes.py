@@ -68,7 +68,7 @@ def products():
 def product_details():
     item = productsHandler.retrieve_data(category='Hygiene')[0]
     item = {'name': item[2], 'description': item[3],
-            'imageUrl': item[5], 'price': item[6], 'co2print': item[7], 'envimp': item[8]}
+            'imageUrl': item[5], 'price': item[6], 'co2print': item[7], 'envimp': item[8], 'productId': item[0]}
     print(item)
     return jsonify(item)
 
