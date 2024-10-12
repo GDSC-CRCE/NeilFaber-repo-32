@@ -64,6 +64,7 @@ Nexora Cart is a web-based platform designed to promote sustainable consumption 
 <div align='center'>
 
 ![Home Page Tablet](assets/SS%202.png)
+
 ![Mobile Home Page](assets/SS%204.png)
 
 </div>
