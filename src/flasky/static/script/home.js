@@ -5,8 +5,6 @@ async function intialise() {
   if (cart) {
     cartNumber.innerHTML = cart.length;
   }
-
-  fetch();
 }
 
 intialise();

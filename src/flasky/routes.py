@@ -99,7 +99,8 @@ def search(item):
 @app.route('/bonus/get')
 def get_bonus():
     bonus = userHandler.retrieve_user(email=session.get('email'))[3]
-    return bonus
+    print(bonus)
+    return jsonify(bonus)
 
 
 @app.route('/bonus/update/<int:by>')
