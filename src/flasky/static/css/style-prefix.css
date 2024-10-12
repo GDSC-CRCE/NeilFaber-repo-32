@@ -1627,7 +1627,11 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 #product-description {
-  padding: 20px;
+  padding: 40px;
+}
+
+#product-life-cycle {
+  padding: 40px;
 }
 
 /*-----------------------------------*\
@@ -1757,7 +1761,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 .product-grid .btn-action {
   background: var(--white);
-  color: var(--sonic-silver);
+  color: white;
   margin-bottom: 5px;
   border: 1px solid var(--cultured);
   padding: 5px;
@@ -3424,4 +3428,12 @@ footer {
     left: 110px;
     max-width: 460px;
   }
+}
+
+.white {
+  color: rgba(255, 255, 255, 0.792) !important;
+}
+
+.black {
+  color: black !important;
 }

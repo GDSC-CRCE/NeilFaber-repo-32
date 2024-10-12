@@ -8,3 +8,8 @@ function intialise() {
 }
 
 intialise();
+
+function viewProduct(id) {
+  localStorage.setItem("product", JSON.stringify(id));
+  window.location.href = "/products";
+}

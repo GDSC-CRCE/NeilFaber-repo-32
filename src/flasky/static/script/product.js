@@ -1,5 +1,6 @@
 var productName = document.getElementById("product-name");
 var productDescription = document.getElementById("product-description");
+var productLifeCycle = document.getElementById("product-life-cycle");
 var productImage = document.getElementById("product-image");
 var productPrice = document.getElementById("product-price");
 var productId = JSON.parse(localStorage.getItem("product"));
@@ -11,8 +12,9 @@ function setVariable() {
       // Process the fetched data
       productName.innerText = data["name"];
       productDescription.innerHTML = data["description"];
+      productLifeCycle.innerHTML = data["life_cycle"];
       productImage.src = data["imageUrl"];
-      productPrice.innerText = "₹ " + data["price"];
+      productPrice.innerText = data["price"];
       productId = data["productId"];
       console.log(data);
     })
