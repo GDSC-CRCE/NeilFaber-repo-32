@@ -3429,3 +3429,7 @@ footer {
 .white {
   color: rgba(255, 255, 255, 0.792) !important;
 }
+
+.black {
+  color: black !important;
+}
