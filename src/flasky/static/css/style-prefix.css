@@ -3437,3 +3437,8 @@ footer {
 .black {
   color: black !important;
 }
+
+#bonus {
+  color: greenyellow;
+  font: bold 20px;
+}

@@ -96,6 +96,20 @@ def search(item):
         return jsonify({'error': 'Error fetching data'}), 400
 
 
+@app.route('/bonus/get')
+def get_bonus():
+    bonus = userHandler.retrieve_user(email=session.get('email'))[3]
+    return bonus
+
+
+@app.route('/bonus/update/<int:by>')
+def update_bonus(by):
+    data = userHandler.retrieve_user(email=session['email'])
+    user_id, bonus = data[0], data[3]
+    userHandler.update_user(user_id=user_id, bonus=bonus+by)
+    return jsonify({'success': 'Successfully Updated'})
+
+
 def insertData():
     if not productsHandler.retrieve_data(category='Hygiene'):
         userHandler.create_user(

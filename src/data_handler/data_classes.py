@@ -154,6 +154,7 @@ class UsersHandler:
                 user_id INTEGER PRIMARY KEY AUTOINCREMENT,
                 first_name TEXT,
                 last_name TEXT,
+                bonus INT,
                 bio TEXT,
                 phone TEXT,
                 email TEXT,
@@ -171,19 +172,25 @@ class UsersHandler:
     def create_user(self, first_name, last_name, bio, phone, email, image, password, shipping_address, dob):
         created_at = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         sql = """
-            INSERT INTO users (first_name, last_name, bio, phone, email, image, password, shipping_address, dob, created_at)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            INSERT INTO users (first_name, last_name, bonus, bio, phone, email, image, password, shipping_address, dob, created_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """
-        values = (first_name, last_name, bio, phone, email, image,
+        values = (first_name, last_name, 0, bio, phone, email, image,
                   password, shipping_address, dob, created_at)
         self.cursor.execute(sql, values)
         self.conn.commit()
         print("User created successfully.")
 
-    def retrieve_user(self, first_name=None, last_name=None, password=None, email=None, phone=None):
+    def retrieve_user(self, user_id=None, first_name=None, last_name=None, password=None, email=None, phone=None):
         sql = "SELECT * FROM users"
         where_clause = []
         values = []
+        if user_id:
+            where_clause.append("user_id = ?")
+            values.append(user_id)
+        if first_name:
+            where_clause.append("first_name = ?")
+            values.append(first_name)
         if first_name:
             where_clause.append("first_name = ?")
             values.append(first_name)
@@ -210,13 +217,15 @@ class UsersHandler:
         else:
             return None
 
-    def update_user(self, user_id, first_name=None, last_name=None, bio=None, phone=None, email=None, image=None, password=None, shipping_address=None, dob=None):
+    def update_user(self, user_id, first_name=None, bonus=None, last_name=None, bio=None, phone=None, email=None, image=None, password=None, shipping_address=None, dob=None):
         sql = "UPDATE users SET"
         update_set = []
         if first_name:
             update_set.append("first_name = ?")
         if last_name:
             update_set.append("last_name = ?")
+        if bonus:
+            update_set.append("bonus = ?")
         if bio:
             update_set.append("bio = ?")
         if phone:
@@ -235,7 +244,7 @@ class UsersHandler:
         if update_set:
             sql += " " + ", ".join(update_set) + " WHERE user_id = ?"
 
-        values = (first_name, last_name, bio, phone, email,
+        values = (first_name, last_name, bonus, bio, phone, email,
                   image, password, shipping_address, dob, user_id)
         self.cursor.execute(sql, values)
         self.conn.commit()
