@@ -1,7 +1,7 @@
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
 // Fetch product details for each item in the cart and display them
 document.addEventListener("DOMContentLoaded", async function () {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
   const cartItemsContainer = document.getElementById("cart-items");
   const totalSummaryContainer = document.querySelector(".cart-summary div");
   let totalPrice = 0;
@@ -14,7 +14,9 @@ document.addEventListener("DOMContentLoaded", async function () {
     try {
       let response = await fetch(`/product-details/${productId}`);
       let item = await response.json();
-      if (item.packaging) item.packaging = 0.5;
+
+      // Set default packaging value if not provided
+      if (!item.packaging) item.packaging = 0.5;
 
       // Calculate average impact
       let avgImpact = (
@@ -63,10 +65,10 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   // Display total summary
   totalSummaryContainer.innerHTML = `
-      <span>Total Price: $${totalPrice}</span>
-      <span>Total Carbon Footprint: ${totalCo2}</span>
-      <span>Total Packaging: ${totalPackaging}</span>
-      <span>Total Environmental Impact: ${totalEnvImpact}</span>
+      <span>Total Price: $${totalPrice.toFixed(2)}</span>
+      <span>Total Carbon Footprint: ${totalCo2.toFixed(2)}</span>
+      <span>Total Packaging: ${totalPackaging.toFixed(2)}</span>
+      <span>Total Environmental Impact: ${totalEnvImpact.toFixed(2)}</span>
       <span>Average Impact: ${avgTotalImpact}</span>
   `;
 
@@ -74,13 +76,19 @@ document.addEventListener("DOMContentLoaded", async function () {
   cartItemsContainer.addEventListener("click", function (e) {
     if (e.target.classList.contains("remove-btn")) {
       let cartItemElement = e.target.closest(".cart-item");
-      let productId = cartItemElement.getAttribute("data-product-id");
+      let productId = parseInt(cartItemElement.getAttribute("data-product-id")); // Convert to number
 
-      // Remove item from localStorage cart
-      cart = cart.filter((id) => id != productId);
-      localStorage.setItem("cart", JSON.stringify(cart));
+      // Find the index of the first occurrence of the product ID
+      const indexToRemove = cart.findIndex((id) => parseInt(id) === productId);
+      if (indexToRemove !== -1) {
+        cart.splice(indexToRemove, 1); // Remove the first occurrence
+        localStorage.setItem("cart", JSON.stringify(cart));
 
-      window.location.href = "/cart";
+        // Remove item from the page
+        cartItemElement.remove();
+
+        window.location.href = "cart";
+      }
     }
   });
 });
@@ -88,4 +96,5 @@ document.addEventListener("DOMContentLoaded", async function () {
 // Purchase button alert
 document.querySelector(".purchase-btn").addEventListener("click", function () {
   alert("Thank you for your purchase!");
+  window.location.href = "/";
 });
