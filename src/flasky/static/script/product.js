@@ -12,7 +12,7 @@ function setVariable() {
       productName.innerText = data["name"];
       productDescription.innerHTML = data["description"];
       productImage.src = data["imageUrl"];
-      productPrice.innerText = "₹ " + data["price"];
+      productPrice.innerText = data["price"];
       productId = data["productId"];
       console.log(data);
     })

@@ -17,3 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+function goToSignUp() {
+  window.location.href = "/sign-up";
+}
