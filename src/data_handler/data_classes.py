@@ -26,7 +26,7 @@ class ProductsHandler:
         self.conn.commit()
         print("Products table created successfully.")
 
-    def retrieve_data(self, category=None, name=None, id=None, phone=None, co2print=None, envimp=None, ):
+    def retrieve_data(self, category=None, name=None, id=None, co2print=None, envimp=None, ):
         sql = "SELECT * FROM products"
         where_clause = []
         values = []
@@ -37,11 +37,8 @@ class ProductsHandler:
             where_clause.append("name = ?")
             values.append(name)
         if id:
-            where_clause.append("id = ?")
+            where_clause.append("product_id = ?")
             values.append(id)
-        if id:
-            where_clause.append("phone = ?")
-            values.append(phone)
         if co2print:
             where_clause.append("co2print = ?")
             values.append(co2print)

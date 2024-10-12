@@ -64,13 +64,17 @@ def products():
     return render_template('product.html')
 
 
-@app.route('/product-details')
-def product_details():
-    item = productsHandler.retrieve_data(category='Hygiene')[0]
+@app.route('/product-details/<int:id>')
+def product_details(id):
+    item = productsHandler.retrieve_data(id=id)[0]
     item = {'name': item[2], 'description': item[3],
             'imageUrl': item[5], 'price': item[6], 'co2print': item[7], 'envimp': item[8], 'productId': item[0]}
-    print(item)
     return jsonify(item)
+
+
+@app.route('/cart')
+def cart():
+    return render_template('cart.html')
 
 
 def create_rough_Work():

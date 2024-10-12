@@ -2369,7 +2369,6 @@ footer {
 
   .banner-text {
     display: block;
-    color: var(--sonic-silver);
     font-size: var(--fs-7);
     font-weight: var(--weight-500);
     margin-bottom: 10px;
