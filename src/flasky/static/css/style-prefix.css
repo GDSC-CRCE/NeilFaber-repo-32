@@ -1627,7 +1627,11 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 #product-description {
-  padding: 20px;
+  padding: 40px;
+}
+
+#product-life-cycle {
+  padding: 40px;
 }
 
 /*-----------------------------------*\

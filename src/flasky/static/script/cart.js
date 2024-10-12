@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     try {
       let response = await fetch(`/product-details/${productId}`);
       let item = await response.json();
+      if (item.price) item.price = convertPriceToInt(item.price);
 
       // Set default packaging value if not provided
       if (!item.packaging) item.packaging = 0.5;
@@ -35,7 +36,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                         100
                       )}...</p>
                       <div class="item-info">
-                          <span>Price: $${item.price}</span>
+                          <span>Price: ₹${item.price}</span>
                           <span>Carbon Footprint: ${item.co2print}</span>
                           <span>Packaging: ${item.packaging}</span>
                           <span>Environmental Impact: ${item.envimp}</span>
@@ -108,7 +109,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       const itemPrice = parseFloat(
         item
           .querySelector(".item-info span:nth-child(1)")
-          .textContent.replace("Price: $", "")
+          .textContent.replace("Price: ", "")
       );
       const itemCo2 = parseFloat(
         item
@@ -154,14 +155,25 @@ document.addEventListener("DOMContentLoaded", async function () {
     avgImpact = parseFloat(avgImpact) || 0;
 
     totalSummaryContainer.innerHTML = `
-      <span>Total Price: $${price.toFixed(2)}</span>
-      <span>Total Carbon Footprint: ${co2.toFixed(2)}</span>
-      <span>Total Packaging: ${packaging.toFixed(2)}</span>
-      <span>Total Environmental Impact: ${envImpact.toFixed(2)}</span>
-      <span>Average Impact: ${avgImpact}</span>
+      <p class="left-20">Total Price: ₹${price.toFixed(2)}</p>
+      <p>&nbsp;</p>
+      <p class="left-20">Total Carbon Footprint: ${co2.toFixed(2)}</p>
+       <p>&nbsp;</p>
+      <p class="left-20">Total Packaging: ${packaging.toFixed(2)}</p>
+       <p>&nbsp;</p>
+      <p class="left-20">Total Environmental Impact: ${envImpact.toFixed(2)}</p>
+       <p>&nbsp;</p>
+      <p class="left-20">Average Impact: ${avgImpact}</p>
+      <p>&nbsp;</p>
     `;
   }
 });
+
+function convertPriceToInt(priceStr) {
+  // Remove all non-numeric characters (except the dot if it's a decimal price)
+  let numericString = priceStr.replace(/[^\d]/g, ""); // Keeps only digits
+  return parseInt(numericString, 10); // Convert to an integer
+}
 
 // Purchase button alert
 document.querySelector(".purchase-btn").addEventListener("click", function () {

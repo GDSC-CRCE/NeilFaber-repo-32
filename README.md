@@ -6,24 +6,16 @@ Built with Flask, HTML, CSS, and JavaScript, Nexora Cart is an online marketplac
 
 #### Team Black Bulls
 
-<<<<<<< HEAD
-<p align='center'>
-=======
 <div align='center'>
->>>>>>> front
 
 | Image                                                              | Name           | Description         |
 | :----------------------------------------------------------------- | :------------- | :------------------ |
 | <img src="assets/NeilFaber.jpeg" alt="Neil Faber" width="90">      | Neil Faber     | Front-End Lead </p> |
 | <img src="assets/JackSequeira.png" alt="Jack Sequeira" width="90"> | Jack Sequeira  | Back-End Lead       |
 | <img src="assets/Justin.jpeg" alt="Justin Dsouza" width="90">      | Justin Dsouza  | Front-End Supporter |
-| <img src="assets/Mokshil" alt="Mokshil Satara" width="90">         | Mokshil Satara | Back-End Supporter  |
+| <img src="assets/Mokshil.jpeg" alt="Mokshil Satara" width="90">    | Mokshil Satara | Back-End Supporter  |
 
-<<<<<<< HEAD
-</p>
-=======
 </div>
->>>>>>> front
 
 ## Project Abstract:
 
@@ -38,20 +30,12 @@ Nexora Cart is a web-based platform designed to promote sustainable consumption 
 
 **Technology Stack:**
 
-<<<<<<< HEAD
-<p align='center'>
-=======
 <div align='center'>
->>>>>>> front
 
 ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)
 ![Flask-CORS](https://img.shields.io/badge/flask_cors-%23000.svg?style=for-the-badge&logo=flask&logoColor=yellow) ![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS](https://img.shields.io/badge/css-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 
-<<<<<<< HEAD
-</p>
-=======
 </div>
->>>>>>> front
 
 - **Backend:** Flask (Python web framework), Flask-CORS
 - **Database:** SQLite (lightweight, embedded database)
